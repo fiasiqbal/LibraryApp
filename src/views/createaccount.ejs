@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/metro/52/000000/library.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="#"></a>
+
+        <div class="navbar-nav">
+          <%for(i=0;i<nav.length;i++){%>
+            <a class="nav-item nav-link" href="<%=nav[i].link%>"><%=nav[i].name%></a>
+          <%}%>
+        </div>
+
+    </nav>
+    
+    <div class="container">
+        <div class="row" style="height: 50px;"></div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="color: azure;">
+                <h1 style="text-align: center; padding: 20px;">Create Account</h1>
+                
+                <form onsubmit="return validate()">
+                    <div class="form-row">
+                      <div class="form-group col">
+                        <input type="text" class="form-control" placeholder="First name" id="nam1" required>
+                      </div>
+                      <div class="form-group col">
+                        <input type="text" class="form-control" placeholder="Last name" id="nam2" required>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email address" id="mail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" id="pwd" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm password" id="cpwd" required>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">Remember me</label>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" formaction="/login">Create account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 80px;"></div>
+
+    <!-- Footer -->
+    <footer style="background-color: #3E4551; color: #ffffff;" class="page-footer font-small indigo">
+
+      <!-- Footer Links -->
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+          <%for(i=0;i<footer.length;i++){%>
+            <!-- Grid column -->
+            <div class="col-md-2 mb-3">
+              <h6 class="text-uppercase font-weight-bold">
+                <a href="<%=footer[i].link%>"><%=footer[i].name%></a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+          <%}%>
+
+        </div>
+        <!-- Grid row-->
+
+        <!-- Grid row-->
+
+          <!-- Grid column -->
+          <div class="col-md-8 col-12 mt-5"></div>
+          <!-- Grid column -->
+
+        <!-- Grid row-->
+
+        <!-- Grid row-->
+        <div class="row pb-3">
+
+          <!-- Grid column -->
+          <div class="col-md-12">
+
+            <div style="text-align: center;" class="mb-5 flex-center">
+
+              <%for(i=0;i<footericon.length;i++){%>
+                <a href="<%=footericon[i].link%>" class="<%=footericon[i].icon%>">
+                  <i class="<%=footericon[i].class%>"> </i>
+                </a>
+              <%}%>
+
+            </div>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+      <!-- Footer Links -->
+
+      <!-- Copyright -->
+      <div style="background-color: #323741;" class="footer-copyright text-center py-3 text-muted">© 2020 Copyright: Library Management System</div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <script src="js/createaccount.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
