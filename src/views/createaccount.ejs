@@ -29,24 +29,24 @@
             <div class="col-md-4" style="color: azure;">
                 <h1 style="text-align: center; padding: 20px;">Create Account</h1>
                 
-                <form onsubmit="return validate()">
+                <form method="post" onsubmit="return validate()">
                     <div class="form-row">
                       <div class="form-group col">
-                        <input type="text" class="form-control" placeholder="First name" id="nam1" required>
+                        <input type="text" class="form-control" name="first_name" placeholder="First name" id="nam1" required>
                       </div>
                       <div class="form-group col">
-                        <input type="text" class="form-control" placeholder="Last name" id="nam2" required>
+                        <input type="text" class="form-control" name="last_name" placeholder="Last name" id="nam2" required>
                       </div>
                     </div>
                     
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email address" id="mail" required>
+                        <input type="email" class="form-control" name="email" placeholder="Email address" id="mail" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" id="pwd" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" id="pwd" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Confirm password" id="cpwd" required>
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm password" id="cpwd" required>
                     </div>
 
                     <div class="form-group">
@@ -55,7 +55,7 @@
                         <label class="form-check-label" for="gridCheck">Remember me</label>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block" formaction="/login">Create account</button>
+                    <button type="submit" class="btn btn-primary btn-block" formaction="/createaccount/submit">Create account</button>
                 </form>
             </div>
         </div>

@@ -50,12 +50,12 @@
       <%for(i=0;i<books.length;i++){%>
         <div class="col mb-3">
           <div class="card h-100">
-            <img src="<%=books[i].img%>" class="card-img-top" style='height: 300px;'>
+            <img src="/images/<%=books[i].image%>" class="card-img-top" style='height: 300px;'>
             <div class="card-body">
-              <h5 class="card-title"><%=books[i].name%></h5>
+              <h5 class="card-title"><%=books[i].title%></h5>
               <p class="card-text"><%=books[i].author%></p>
               <!-- <a href="https://www.google.com/shopping/product/16871549736652818787?q=books&sxsrf=ALeKk00O2EBWq8fX857VqWXSL1r_wh6oEg:1583687519916&biw=1336&bih=646&prds=epd:18021287489240383768,prmr:1&sa=X&ved=0ahUKEwjNoKnir4voAhUUjeYKHdtqBscQ8wIImQI" class="stretched-link">More info...</a> -->
-              <a href="/books/<%=i%>" class="stretched-link">More info...</a>
+              <a href="/books/<%=books[i]._id%>" class="stretched-link">More info...</a>
             </div>
           </div>
         </div>

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books</title>
+    <title>Add Book</title>
     <link rel="shortcut icon" href="https://img.icons8.com/metro/52/000000/library.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>
 <body>
@@ -17,12 +17,12 @@
 
       <ul class="navbar-nav mr-auto">
         <%for(i=0;i<nav.length;i++){%>
-          <li class="nav-item">
+          <li class="nav-item <%if (nav[i].name=='Add Book'){%>active<%}%>">
             <a class="nav-link" href="<%=nav[i].link%>"><%=nav[i].name%></a>
           </li>
         <%}%>
       </ul>
-  
+
       <form style="margin-right: 40px;">
         <%for(i=0;i<account.length;i++){%>
           <a href="<%=account[i].link%>" class="btn btn-outline-light"><%=account[i].name%></a>
@@ -30,46 +30,39 @@
       </form>
       
     </div>
+    
   </nav>
 
   <div class="container-fluid">
     <div class="text-white" style="padding: 80px 40px 40px;">
       <div class="row">
         <style></style>
-        <h1>Books</h1>
+        <h1>Add Book</h1>
       </div>
     </div>
   </div>
 
   <!-- CARDS -->
 
-  <div class="container" style="padding: 30px;">
+    <div class="container" style="padding: 30px;">
 
         <div class="card mb-3">
-          <div class="row no-gutters">
-            <div class="col-md-3">
-              <img src="/images/<%=book.image%>" class="card-img">
-            </div>
-            <div class="col-md-9">
-              <div class="card-body" style="padding: 40px;">
-                <h3 class="card-title"><%=book.title%></h3>
-                <h6><%=book.author%></h6>
-                <p></p>
-                <p class="card-text"><%=book.description%></p>
-              </div>
-              <div style="padding: 40px; position: absolute; right: 0; bottom: 0;">
-                <form style="display: inline;" action="/admin/updatebook/<%=book._id%>">
-                  <button class="btn-sm btn-light">Update</button>
+            <div class="row no-gutters">
+                <form action="/admin/add" method="post" style="padding: 20px;">
+                    <label for=""><b>Title: </b></label>
+                    <input type="text" name="title" id=""> <br>
+                    <label for=""><b>Author: </b></label>
+                    <input type="text" name="author" id=""><br>
+                    <label style="vertical-align:top;" for=""><b>Description: </b></label>
+                    <textarea style="width: 500px; height: 150px;" name="description" id=""></textarea><br>
+                    <label for=""><b>Image: </b></label>
+                    <input type="file" name="image" id=""><br><br>
+                    <button type="submit" class="btn btn-primary">Add Book</button>
                 </form>
-                <form style="display: inline;" action="/admin/delete/<%=book._id%>">
-                  <button class="btn-sm btn-light">Delete</button>
-                </form>
-              </div>
             </div>
-          </div>
         </div>
-  
-  </div>
+
+    </div>
 
   <!-- Footer -->
   <footer style="background-color: #3E4551; color: #ffffff;" class="page-footer font-small indigo">

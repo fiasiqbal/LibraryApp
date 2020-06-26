@@ -51,11 +51,11 @@
         <%for(i=0;i<authors.length;i++){%>
           <div class="col mb-3">
             <div class="card h-100">
-              <img src="<%=authors[i].img%>" class="card-img-top" alt="...">
+              <img src="/images/<%=authors[i].image%>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><%=authors[i].name%></h5>
                 <p class="card-text"></p>
-                <a href="/authors/<%=i%>" class="stretched-link">More info...</a>
+                <a href="/authors/<%=authors[i]._id%>" class="stretched-link">More info...</a>
               </div>
             </div>
           </div>

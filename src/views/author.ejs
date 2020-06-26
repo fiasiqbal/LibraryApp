@@ -48,7 +48,7 @@
         <div class="card mb-3">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img src="<%=author.img%>" class="card-img">
+              <img src="/images/<%=author.image%>" class="card-img">
             </div>
             <div class="col-md-8">
               <div class="card-body" style="padding: 40px;">
@@ -56,6 +56,14 @@
                 <div style="height: 5px;"></div>
                 <!-- <p></p> -->
                 <p class="card-text"><%=author.description%></p>
+              </div>
+              <div style="padding: 40px; position: absolute; right: 0; bottom: 0;">
+                <form style="display: inline;" action="/admin/updateauthor/<%=author._id%>">
+                  <button class="btn-sm btn-light">Update</button>
+                </form>
+                <form style="display: inline;" action="/admin/addauthor/delete/<%=author._id%>">
+                  <button class="btn-sm btn-light">Delete</button>
+                </form>
               </div>
             </div>
           </div>

@@ -25,7 +25,7 @@ function validateForm(){
             return false;
         }
         else {
-            alert("You are now logged in")
+            // alert("You are now logged in")
             return true;
         }
     }
